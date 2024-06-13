@@ -1,6 +1,9 @@
 FROM deepset/hayhooks:main
 
 ENV USER=hhuser
+ENV OPENAI_API_KEY=YOUR-API-KEY
+
+RUN apt-get update && apt-get install -y vim
 
 # Add user to system
 RUN useradd -m -u 1000 $USER
@@ -10,6 +13,7 @@ COPY /src/pipelines /opt/pipelines
 WORKDIR /opt/hayhooks
 
 COPY /src/start-script.sh start-script.sh
+COPY /src/.env.template .env
 
 RUN chown -R $USER:$USER . && \
     chmod ug+x start-script.sh

@@ -6,17 +6,23 @@ LLM RAG Prototype
 
 ### Build the docker image
 
-    docker build -t llm-rag-prototype:dev .
+  docker build -t llm-rag-prototype:dev .
 
 ### Run the docker image
 
-    docker run -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
+  docker run -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
+
+Optionally get API keys from an .env file
+
+  docker run --env-file ./src/.env --rm -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
 
 Note: original port was 1416
 
 ### The REST API spec
 
-Browse http://localhost:1416/docs#/
+Browse http://localhost:8000/docs#/
+
+Status http://localhost:8000/status
 
 
 ## API Keys
@@ -24,6 +30,25 @@ Browse http://localhost:1416/docs#/
 Some pipelines may require an API key. To use them, create env variables and set values accordingly:
 
 * OPENAI_API_KEY
+
+
+## Pipeline API endpoints
+
+Interact with the API specification of the Chat with a website pipeline without using API tokens:
+
+  /chat_with_website_spec
+
+Chat with a website using model gpt-3.5-turbo:
+
+  /chat_with_website
+
+Chat with a wensite using model gpt-4:
+
+  /chat_with_website_gpt4
+
+Simple test pipeline:
+
+  /test_pipeline_01
 
 
 ## Development from base image deepset/hayhooks
@@ -43,6 +68,9 @@ Create yaml pipelines in the ./src/pipelines/ dir
 ### REST API spec
 
 Browse  http://localhost:1416/docs#/
+
+Status: http://localhost:1416/status
+
 
 ### Usage during development
 

@@ -50,3 +50,28 @@ curl -X 'POST' \
     "value": 19
   }
 }'
+
+
+curl -X 'POST' \
+  'http://localhost:1416/chat_with_website' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "converter": {
+    "meta": {},
+    "extraction_kwargs": {}
+  },
+  "fetcher": {
+    "urls": [
+      "https://www.scilifelab.se/"
+    ]
+  },
+  "llm": {
+    "generation_kwargs": {}
+  },
+  "prompt": {
+    "template": "What is SciLifeLab?",
+    "template_variables": {},
+    "query": "What is SciLifeLab?"
+  }
+}'

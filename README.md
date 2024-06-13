@@ -19,6 +19,13 @@ Note: original port was 1416
 Browse http://localhost:1416/docs#/
 
 
+## API Keys
+
+Some pipelines may require an API key. To use them, create env variables and set values accordingly:
+
+* OPENAI_API_KEY
+
+
 ## Development from base image deepset/hayhooks
 
 ### Setup

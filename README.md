@@ -6,15 +6,15 @@ LLM RAG Prototype
 
 ### Build the docker image
 
-  docker build -t llm-rag-prototype:dev .
+    docker build -t llm-rag-prototype:dev .
 
 ### Run the docker image
 
-  docker run -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
+    docker run -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
 
 Optionally get API keys from an .env file
 
-  docker run --env-file ./src/.env --rm -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
+    docker run --env-file ./src/.env --rm -p 127.0.0.1:8000:8000 -t llm-rag-prototype:dev
 
 Note: original port was 1416
 

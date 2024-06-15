@@ -24,6 +24,15 @@ Browse http://localhost:8000/docs#/
 
 Status http://localhost:8000/status
 
+## UI Setup
+
+### Build the docker image
+
+```
+$ cd ui
+$ docker build --platform=amd64 -t llm-rag-prototype-ui:dev .
+$ docker run -p 8000:8000 -t llm-rag-prototype-ui:dev
+```
 
 ## API Keys
 

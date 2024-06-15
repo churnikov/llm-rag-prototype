@@ -23,6 +23,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all files that are needed for your app to run with the directory structure as your files expect
 COPY main.py $HOME/app/main.py
+COPY assets/ $HOME/app/assets/
 COPY start-script.sh $HOME/app/start-script.sh
 
 # Give access to appripriate files and folders to the created user

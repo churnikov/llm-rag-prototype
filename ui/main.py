@@ -57,7 +57,7 @@ async def process_prompt(prompt, *args, **kwargs):
 
 if __name__ == "__main__":
     with gr.Blocks(theme="JohnSmith9982/small_and_pretty") as demo:
-        with gr.Tab(label="Chat with SciLifeLab websites"):
+        with gr.Tab(label="<h3>Chat with SciLifeLab websites</h3>"):
             gr.ChatInterface(
                 fn=process_prompt,
                 fill_height=False
@@ -85,4 +85,6 @@ if __name__ == "__main__":
         debug=True,
         server_name="0.0.0.0",
         server_port=8000,
+        favicon_path="assets/scilifelab_favicon.png",
+        auth=("username", "password")
     )
